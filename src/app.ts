@@ -1,8 +1,24 @@
-const toppings = ['bacon', 'chilli'];
+// Destructuring works on importing modules!!
+// import { obj } from './utils';
 
-const newToppings = ['pepperoni'];
+const pizza = {
+  name: 'Pepperoni',
+  toppings: ['pepperoni'],
+};
 
-// Creates a copy of items in each source array
-const allToppings = [...toppings, ...newToppings];
+function order({ name: pizzaName, toppings: pizzaToppings }) {
+  return { pizzaName, pizzaToppings };
+}
 
-console.log(allToppings);
+const { pizzaName } = order(pizza);
+
+console.log(pizzaName);
+
+const toppings = ['pepperoni', 'bacon', 'chilli'];
+const [f, s, t] = toppings;
+
+function logToppings([head, ...tail]: any) {
+  console.log(head, tail);
+}
+
+logToppings(toppings);
