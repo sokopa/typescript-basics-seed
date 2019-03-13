@@ -1,24 +1,13 @@
-// Destructuring works on importing modules!!
-// import { obj } from './utils';
+// uppercase -> JS
 
-const pizza = {
-  name: 'Pepperoni',
-  toppings: ['pepperoni'],
-};
+// lowercase -> TS
 
-function order({ name: pizzaName, toppings: pizzaToppings }) {
-  return { pizzaName, pizzaToppings };
+const pizzaCost: number = 10;
+const pizzaToppings: number = 2;
+
+function calculatePrice(cost: number, toppings: number): number {
+  return cost + 1.5 * toppings;
 }
 
-const { pizzaName } = order(pizza);
-
-console.log(pizzaName);
-
-const toppings = ['pepperoni', 'bacon', 'chilli'];
-const [f, s, t] = toppings;
-
-function logToppings([head, ...tail]: any) {
-  console.log(head, tail);
-}
-
-logToppings(toppings);
+const cost = calculatePrice(pizzaCost, pizzaToppings);
+console.log(`Pizza costs: ${cost}`);
