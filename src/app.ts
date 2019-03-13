@@ -1,11 +1,11 @@
-const pizzas: number = 5;
+let selectedTopping: string = 'pepperoni';
 
-function offerDiscount(orders: number): boolean {
-  return orders >= 3;
+// returns void
+function selectTopping(topping: string): void {
+  selectedTopping = topping;
 }
 
-if (offerDiscount(pizzas)) {
-  console.log(`You're entitled to a discount!`);
-} else {
-  console.log(`Order more than 3 pizzas for a discount!`);
-}
+let result = selectTopping('bacon');
+
+console.log(selectedTopping);
+console.log('Result', result);
