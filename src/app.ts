@@ -1,11 +1,9 @@
-let selectedTopping: string = 'pepperoni';
+let pizzaSize: string = 'small';
 
-// returns void
-function selectTopping(topping: string): void {
-  selectedTopping = topping;
+function selectSize(size: 'small' | 'medium' | 'large'): void {
+  pizzaSize = size;
 }
 
-let result = selectTopping('bacon');
+selectSize('medium');
 
-console.log(selectedTopping);
-console.log('Result', result);
+console.log(`Pizza size: ${pizzaSize}`);
