@@ -1,12 +1,13 @@
-// named function
-// function sumOrder(price: number, quantity: number): number {
-//   return price * quantity;
-// }
+let sumOrder: (price: number, quantity?: number) => number;
 
-let sumOrder: (price: number, quantity: number) => number;
+sumOrder = (x, y) => {
+  if (y) {
+    return x * y;
+  }
+  return x;
+};
 
-sumOrder = (x, y) => x * y;
-
-const sum = sumOrder(25, 5);
+const sum = sumOrder(25);
+sumOrder(25, 2);
 
 console.log(`Total sum: ${sum}`);
