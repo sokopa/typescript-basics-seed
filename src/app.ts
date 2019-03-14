@@ -1,7 +1,5 @@
-let sizes: string[];
+let pizza: [string, number, boolean];
 
-sizes = ['small', 'medium', 'large'];
+// pizza = [true, 'Pepperoni', 20]; // can't do that.
 
-// Generic
-let toppings: Array<string>;
-toppings = ['pepperoni', 'tomato', 'bacon'];
+pizza = ['Pepperoni', 20, true];
