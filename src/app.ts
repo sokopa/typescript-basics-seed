@@ -1,5 +1,10 @@
-let pizza: [string, number, boolean];
+type Size = 'small' | 'medium' | 'large';
+type Callback = (size: Size) => void;
 
-// pizza = [true, 'Pepperoni', 20]; // can't do that.
+let pizzaSize: Size = 'small';
 
-pizza = ['Pepperoni', 20, true];
+const selectSize: Callback = x => {
+  pizzaSize = x;
+};
+
+selectSize('medium');
