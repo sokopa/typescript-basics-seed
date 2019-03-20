@@ -1,9 +1,8 @@
 class Pizza {
   toppings: string[] = [];
 
-  constructor(private name: string) {} // shorthand to also declare private property
+  constructor(readonly name: string) {}
 
-  // by default, all are public
   addTopping(topping: string) {
     this.toppings.push(topping);
   }
@@ -12,4 +11,5 @@ class Pizza {
 const pizza = new Pizza('Pepperoni');
 pizza.addTopping('pepperoni');
 
-console.log(pizza);
+// pizza.name = 'x'; // not applicable
+console.log(pizza.name);
