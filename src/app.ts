@@ -1,4 +1,4 @@
-class Sizes {
+abstract class Sizes {
   constructor(public sizes: string[]) {}
 
   set availableSizes(sizes: string[]) {
@@ -9,6 +9,9 @@ class Sizes {
     return this.sizes;
   }
 }
+
+// cannot create instance of abstract class
+// new Sizes(['small']);
 
 class Pizza extends Sizes {
   toppings: string[] = [];
@@ -21,9 +24,6 @@ class Pizza extends Sizes {
     this.toppings.push(topping);
   }
 }
-
-// element.className = 'abc'; // setter in action
-// console.log(element.className); // getter in action
 
 const pizza = new Pizza('Pepperoni', ['small', 'medium']);
 console.log(pizza.availableSizes);
